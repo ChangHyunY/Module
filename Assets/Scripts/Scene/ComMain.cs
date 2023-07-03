@@ -31,6 +31,11 @@ namespace Anchor
             {
                 DialogManager.CloseFromNavigation();
             }
+
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                Anchor.Unity.Sound.SoundManager.Play(SoundId.eft_ui_click_blop, SoundType.EFT);
+            }
         }
 
         public void DebugMessage(string msg)

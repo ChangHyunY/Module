@@ -83,7 +83,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3562100241772054406}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 712288740638417942}
+        m_TargetAssemblyTypeName: ComUILogin, Assembly-CSharp
+        m_MethodName: OnClickGuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3562100241772054424
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +427,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3562100241991082113}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 712288740638417942}
+        m_TargetAssemblyTypeName: ComUILogin, Assembly-CSharp
+        m_MethodName: OnClickGoogle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3562100242391299128
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +800,7 @@ MonoBehaviour:
   m_UGuiType: 0
   m_SiblingOnOpen: 2
   m_ManageType: 0
+  m_AwakeOnOpen: 0
   m_Id: 0
   m_Navigated: 0
 --- !u!1 &3562100243540150437

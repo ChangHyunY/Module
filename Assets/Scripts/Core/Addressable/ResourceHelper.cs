@@ -30,14 +30,18 @@ namespace Anchor
             int length = System.Enum.GetValues(typeof(GameObjectBagId)).Length;
             s_GameObjectBags = new GameObjectBag[length];
 
-            for(int i = 0; i < length; ++i)
+            for (int i = 0; i < length; ++i)
             {
                 bool rootGameObjectDontDestroy = true;
 
-                switch((GameObjectBagId)i)
+                switch ((GameObjectBagId)i)
                 {
                     case GameObjectBagId.Normal:
                         rootGameObjectDontDestroy = false;
+                        break;
+
+                    case GameObjectBagId.Sound:
+                        rootGameObjectDontDestroy = true;
                         break;
                 }
 
@@ -57,7 +61,7 @@ namespace Anchor
                 resultCallback?.Invoke();
             };
 
-            switch(scene)
+            switch (scene)
             {
                 case SceneId.Login:
                     LoadDefaultScene(Define.LoginAssets, SceneId.Login, callback);

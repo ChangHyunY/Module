@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Anchor.Unity.UGui;
+using Anchor.Unity.Sound;
 
 namespace Anchor
 {
@@ -13,6 +14,7 @@ namespace Anchor
 
             ResourceHelper.Initalize();
             DialogManager.Initialize();
+            SoundManager.Initalize();
         }
     }
 }
