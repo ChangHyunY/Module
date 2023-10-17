@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Anchor.Unity.Addressables;
 
-namespace Anchor
+namespace Anchor.Unity
 {
     public enum SceneId
     {
         Main,
         Login,
         Start,
+        Lobby,
     }
 
     public class ResourceHelper
@@ -23,6 +24,7 @@ namespace Anchor
             "Assets/Scenes/Main.unity",
             "Assets/Scenes/Login.unity",
             "Assets/Scenes/Start.unity",
+            "Assets/Scenes/Lobby.unity",
         };
 
         public static void Initalize()
@@ -39,17 +41,13 @@ namespace Anchor
                     case GameObjectBagId.Normal:
                         rootGameObjectDontDestroy = false;
                         break;
-
-                    case GameObjectBagId.Sound:
-                        rootGameObjectDontDestroy = true;
-                        break;
                 }
 
                 s_GameObjectBags[i] = new GameObjectBag(i, ((GameObjectBagId)i).ToString(), rootGameObjectDontDestroy);
             }
         }
 
-        public static void LoadScene(SceneId scene, System.Action resultCallback = null)
+        public static void LoadScene(SceneId scene, string[] keys, System.Action resultCallback = null)
         {
             System.Action<bool> callback = (success) =>
             {
@@ -63,12 +61,8 @@ namespace Anchor
 
             switch (scene)
             {
-                case SceneId.Login:
-                    LoadDefaultScene(Define.LoginAssets, SceneId.Login, callback);
-                    break;
-
-                case SceneId.Start:
-                    LoadDefaultScene(Define.StartAssets, SceneId.Start, callback);
+                default:
+                    LoadDefaultScene(keys, scene, callback);
                     break;
             }
         }

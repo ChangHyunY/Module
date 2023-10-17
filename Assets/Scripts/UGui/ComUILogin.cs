@@ -1,5 +1,6 @@
-using Anchor.Unity.UGui.Panel;
 using System;
+using Anchor.Unity;
+using Anchor.Unity.UGui.Panel;
 
 public class ComUILogin : ComPanel<ComUILogin>
 {
@@ -25,11 +26,13 @@ public class ComUILogin : ComPanel<ComUILogin>
 
     public void OnClickGoogle()
     {
-        Anchor.ResourceHelper.LoadScene(Anchor.SceneId.Start);
+        SoundManager.Play(SoundId.eft_ui_click_blop, SoundType.EFT);
+        ResourceHelper.LoadScene(SceneId.Start, Define.StartAssets);
     }
 
     public void OnClickGuest()
     {
-        Anchor.ResourceHelper.LoadScene(Anchor.SceneId.Start);
+        SoundManager.Play(SoundId.eft_ui_click_blop, SoundType.EFT);
+        ResourceHelper.LoadScene(SceneId.Start, Define.StartAssets);
     }
 }

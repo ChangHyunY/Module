@@ -10,20 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Sound Assets Groups
+  m_Name: Start Assets Groups
   m_EditorClassIdentifier: 
-  m_GroupName: Sound Assets Groups
+  m_GroupName: Start Assets Groups
   m_Data:
     m_SerializedData: []
-  m_GUID: 1ec563edad6654c469cf45252fcf8e50
+  m_GUID: 2cc7c315ffd4b4d4e8ca96e69f85b312
   m_SerializeEntries:
-  - m_GUID: 52ed92217c4300243bb31b0c9a4fbab5
-    m_Address: Assets/Resource/Sound/Assets
+  - m_GUID: f4188aa9cad5c3a419d7e0d3462f3dc0
+    m_Address: Assets/Resource/Start/Assets
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 64371ec6ef2fb0245a5ed28ab19f96d6
+    m_Address: Assets/Resource/Start/References
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2b024d508fc20a84a90321b4437a32a1, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: c2242c104e847d8449fa7a494c185ec6, type: 2}
-    - {fileID: 11400000, guid: 227b0502fd5f13443a02e6f4d6785631, type: 2}
+    - {fileID: 11400000, guid: 3d79213822689344f8a3575584c3819d, type: 2}
+    - {fileID: 11400000, guid: c2c2e407f7d526548bd1b83f29d37e9d, type: 2}

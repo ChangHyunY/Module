@@ -2,7 +2,6 @@
 enum GameObjectBagId
 {
     Normal,
-    Sound,
 }
 
 public enum DialogId
@@ -13,6 +12,7 @@ public enum DialogId
 public enum PanelId
 {
     Login,
+    Start,
 }
 
 public enum SoundType
@@ -24,6 +24,13 @@ public enum SoundType
 public enum SoundId
 {
     eft_ui_click_blop,
+}
+
+public enum DamageId
+{
+    Default,
+    Critical,
+    Dodge,
 }
 
 public partial class Define
@@ -40,14 +47,18 @@ public partial class Define
 
     private static readonly string[] k_StartAssets =
     {
+        "Assets/Resource/Start/Assets/Canvas_Start.prefab",
+    };
+
+    private static readonly string[] k_LobbyAssets =
+    {
     };
 
 
     public static string[] SoundAssets => k_SoundAssets;
-
     public static string[] LoginAssets => k_LoginAssets;
-
     public static string[] StartAssets => k_StartAssets;
+    public static string[] LobbyAssets => k_LobbyAssets;
 
 
     private const string k_SoundPath = "Assets/Resource/Sound/Assets/";

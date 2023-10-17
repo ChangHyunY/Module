@@ -1,5 +1,6 @@
-namespace Anchor.Unity.UGui
+namespace Anchor.Unity
 {
+    using Anchor.Unity.UGui;
     using Anchor.Unity.UGui.Dialog;
     using Anchor.Unity.UGui.Panel;
     using Anchor.Core.Pool;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Anchor.Unity.Addressables;
 
-namespace Anchor.Unity.Sound
+namespace Anchor.Unity
 {
     public class SoundManager
     {

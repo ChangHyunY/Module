@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Anchor.Unity.UGui;
-using Anchor.Unity.Sound;
+using Anchor.Unity;
 
 namespace Anchor
 {
