@@ -20,6 +20,8 @@ namespace Anchor.Unity.UGui.Panel
             DialogManager.Add(UGuiId.Panel, this);
 
             s_Root = this as T;
+
+            OnInit();
         }
 
         protected override void OnDestroy()

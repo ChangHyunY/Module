@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using Anchor.Unity.UGui;
-using Anchor.Core.Pool;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Anchor.Unity;
+using Anchor.Unity.UGui.Panel;
 
 namespace Witch
 {
@@ -14,28 +11,36 @@ namespace Witch
         CommonDialog,
     }
 
-    public class ComUIDemo : MonoBehaviour
+    public class ComUIDemo : ComPanel<ComUIDemo>
     {
-        private static ComUIDemo m_Root;
-        public static ComUIDemo Root => m_Root;
-
-
         [SerializeField] AssetReference m_DamageTextRef;
         [SerializeField] Transform m_RootDamageText;
 
         [SerializeField] Transform m_CommonDialog;
         [SerializeField] Transform m_RootCommonDialog;
-        
-        
 
-        private void Awake()
+        protected override void OnInit()
         {
-            m_Root = this;
-
-            Initialize();
+            CreateSubject();
         }
 
-        private void Initialize()
+        protected override void OnClose()
+        {
+        }
+
+        protected override void OnOpen()
+        {
+        }
+
+        protected override void OnSetData(System.EventArgs args)
+        {
+        }
+
+        protected override void OnSetBenText(string[] text)
+        {
+        }
+
+        private void CreateSubject()
         {
             for (int i = 0, loop = 16; i < loop; ++i)
             {
@@ -58,7 +63,7 @@ namespace Witch
         // Button Event
         public void OnEventCommonDialog()
         {
-
+            DialogCaller.OnCommonDialog(DialogId.CommonDialog, "CommonDialog");
         }
     }
 }

@@ -11,6 +11,8 @@ namespace Anchor.Unity.UGui.Dialog
         protected override void Awake()
         {
             DialogManager.Add(UGuiId.Dialog, this);
+
+            OnInit();
         }
 
         protected override void OnDestroy()

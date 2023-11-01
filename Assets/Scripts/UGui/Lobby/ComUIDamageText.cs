@@ -50,7 +50,6 @@ namespace Witch
 
         protected override void OnClose()
         {
-            Debug.Log("Close");
         }
 
         protected override void OnInit()

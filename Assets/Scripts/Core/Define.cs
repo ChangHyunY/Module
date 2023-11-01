@@ -14,6 +14,7 @@ public enum PanelId
 {
     Login,
     Start,
+    Demo,
 }
 
 public enum SoundType

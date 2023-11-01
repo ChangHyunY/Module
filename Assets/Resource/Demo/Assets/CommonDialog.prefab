@@ -221,6 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8831956332739229297}
   - component: {fileID: 3190023861155192701}
+  - component: {fileID: 6975107541356286414}
   m_Layer: 5
   m_Name: CommonDialog
   m_TagString: Untagged
@@ -265,9 +266,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UGuiType: 1
   m_SiblingOnOpen: 2
-  m_ManageType: 1
+  m_ManageType: 0
   m_AwakeOnOpen: 0
   m_Id: 0
+--- !u!95 &6975107541356286414
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831956332739229296}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29ceeddfbb46bb6458ce683fc0bdde59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8831956334050514748
 GameObject:
   m_ObjectHideFlags: 0
