@@ -30,7 +30,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: a77c1d1a14a3f82468452e4cea7bee82
-    m_Address: Assets/Scenes/Lobby.unity
+    m_Address: Assets/Scenes/Demo.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

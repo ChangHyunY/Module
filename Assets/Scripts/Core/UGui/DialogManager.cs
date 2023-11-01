@@ -14,7 +14,9 @@ namespace Anchor.Unity
         private static Dictionary<UGuiId, List<UGuiInfo>> m_Values;
         private static Stack<IPanel> m_NavigateValues;
 
-        public static bool InitCalled => s_InitCalled;
+        private const int m_DefaultInitalCount = 8;
+        private const int m_DefaultInitalCapacity = 16;
+        private const int m_DefaultMaxPoolSize = 64;
 
         public static void Initialize()
         {
@@ -31,7 +33,7 @@ namespace Anchor.Unity
             m_NavigateValues = new Stack<IPanel>();
         }
 
-        public static void Add(UGuiId id, ComUGui uGui)
+        public static void Add(UGuiId id, ComUGui uGui, int initCount = m_DefaultInitalCount, int initalCapacity = m_DefaultInitalCapacity, int maxPoolSize = m_DefaultMaxPoolSize)
         {
             if (!s_InitCalled) Initialize();
 
@@ -41,9 +43,7 @@ namespace Anchor.Unity
                 {
                     uGui.gameObject.SetActive(false);
 
-                    //TODO
-                    //ObjectPool<ComDialog> pool = new ObjectPool<ComDialog>(dialog, 8, dialog.transform.parent);
-                    Pool<ComUGui> pool = new Pool<ComUGui>(null, 8, 16, 16);
+                    Pool<ComUGui> pool = new Pool<ComUGui>(uGui, initCount, initalCapacity, maxPoolSize);
 
                     m_Values[id].Add(new UGuiInfo(uGui, pool));
                 }
@@ -54,6 +54,15 @@ namespace Anchor.Unity
             }
             else
             {
+                if(uGui.ManageType == ManageType.Pool)
+                {
+                    uGui.gameObject.SetActive(false);
+
+                    int idx = m_Values[id].FindIndex(element => element.Component.GetID() == uGui.GetID());
+
+                    m_Values[id][idx].Pool.Add(uGui);
+                }
+
                 return;
             }
         }
@@ -76,9 +85,9 @@ namespace Anchor.Unity
             {
                 var idx = m_Values[uGui.UGuiType].FindIndex(element => element.Component.GetID() == uGui.GetID());
 
-                if(idx > 0)
+                if(idx >= 0)
                 {
-                    m_Values[uGui.UGuiType][uGui.GetID()].Pool.Return(uGui);
+                    m_Values[uGui.UGuiType][idx].Pool.Return(uGui);
                 }
             }
             else

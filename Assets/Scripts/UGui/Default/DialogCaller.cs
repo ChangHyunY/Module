@@ -27,5 +27,17 @@ namespace Witch
             string[] btnText = { "1" };
             DialogManager.DisPlay((int)dialogId, data, btnText, clickCallback);
         }
+
+        public static void OnCommonDialog(DialogId dialogId, string title)
+        {
+            var data = new Args<CommonDialogData>() { Arg1 = new CommonDialogData(title) };
+            DialogManager.DisPlay((int)dialogId, data, null, null);
+        }
+
+        public static void OnDamageText(DialogId dialogId, string title, int id, UnityEngine.Vector3 pivot)
+        {
+            var data = new Args<DamageDialogData>() { Arg1 = new DamageDialogData(title, id, pivot) };
+            DialogManager.DisPlay((int)dialogId, data, null, null);
+        }
     }
 }

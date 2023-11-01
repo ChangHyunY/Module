@@ -6,7 +6,8 @@ enum GameObjectBagId
 
 public enum DialogId
 {
-
+    CommonDialog,
+    DamageText,
 }
 
 public enum PanelId
@@ -50,15 +51,19 @@ public partial class Define
         "Assets/Resource/Start/Assets/Canvas_Start.prefab",
     };
 
-    private static readonly string[] k_LobbyAssets =
+    private static readonly string[] k_DemoAssets =
     {
+        "Assets/Resource/Demo/Assets/Canvas_Demo.prefab",
+        "Assets/Resource/Demo/Assets/CommonDialog.prefab",
+        "Assets/Resource/Demo/Assets/Cube.prefab",
+        "Assets/Resource/Demo/Assets/TMP_Damage.prefab",
     };
 
 
     public static string[] SoundAssets => k_SoundAssets;
     public static string[] LoginAssets => k_LoginAssets;
     public static string[] StartAssets => k_StartAssets;
-    public static string[] LobbyAssets => k_LobbyAssets;
+    public static string[] DemoAssets => k_DemoAssets;
 
 
     private const string k_SoundPath = "Assets/Resource/Sound/Assets/";

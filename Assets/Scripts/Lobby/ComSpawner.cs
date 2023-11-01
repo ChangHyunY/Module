@@ -11,6 +11,7 @@ namespace Witch
 
         public static ComSpawner Root => m_Root;
 
+        private float m_Angle = 360f;
         [SerializeField] float m_Radius;
         [SerializeField] short m_Count;
         [SerializeField] Transform m_Prefab;
@@ -36,7 +37,7 @@ namespace Witch
 
         private List<Vector3> CalculatePointsOnCircle()
         {
-            float angleIncrement = 360.0f / m_Count;
+            float angleIncrement = m_Angle / m_Count;
             List<Vector3> points = new List<Vector3>();
 
             for (int i = 0; i < m_Count; ++i)

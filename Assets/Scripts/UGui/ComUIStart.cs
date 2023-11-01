@@ -26,6 +26,6 @@ public class ComUIStart : ComPanel<ComUIStart>
 
     public void OnGameStart()
     {
-        ResourceHelper.LoadScene(SceneId.Lobby, Define.LobbyAssets);
+        ResourceHelper.LoadScene(SceneId.Demo, Define.DemoAssets);
     }
 }

@@ -81,6 +81,13 @@ namespace Anchor.Unity.Addressables
             }
         }
 
+        public T Get<T>(AssetReference assetReference) where T : Component
+        {
+            string assetPath = ResourceManager.GetAddressablePath(assetReference);
+
+            return Get<T>(assetPath);
+        }
+
         public T Get<T>(string addressable) where T : Component
         {
             if(m_Items.TryGetValue(addressable, out GameObjectData bagData))

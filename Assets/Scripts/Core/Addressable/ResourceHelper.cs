@@ -10,7 +10,7 @@ namespace Anchor.Unity
         Main,
         Login,
         Start,
-        Lobby,
+        Demo,
     }
 
     public class ResourceHelper
@@ -24,7 +24,7 @@ namespace Anchor.Unity
             "Assets/Scenes/Main.unity",
             "Assets/Scenes/Login.unity",
             "Assets/Scenes/Start.unity",
-            "Assets/Scenes/Lobby.unity",
+            "Assets/Scenes/Demo.unity",
         };
 
         public static void Initalize()
@@ -95,10 +95,10 @@ namespace Anchor.Unity
             }
 
             //canvas get
-            foreach (var asset in keys)
-            {
-                yield return s_GameObjectBags[(int)GameObjectBagId.Normal].Get<RectTransform>(asset);
-            }
+            //foreach (var asset in keys)
+            //{
+            //    yield return s_GameObjectBags[(int)GameObjectBagId.Normal].Get<RectTransform>(asset);
+            //}
         }
     }
 }

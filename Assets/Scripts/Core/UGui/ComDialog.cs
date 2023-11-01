@@ -54,11 +54,12 @@ namespace Anchor.Unity.UGui.Dialog
             OnClose();
 
             m_Opened = false;
+            gameObject.SetActive(false);
             DialogManager.ReturnToPool(this);
         }
 
         internal void SetData(System.EventArgs dataArgs, string[] btnText,
-            System.Action<int, System.EventArgs> cliclCallback = null, System.EventArgs callbackArgs = null)
+            System.Action<int, System.EventArgs> clickCallback = null, System.EventArgs callbackArgs = null)
         {
             OnSetData(dataArgs);
         }

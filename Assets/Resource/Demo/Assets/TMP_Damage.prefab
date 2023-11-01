@@ -149,6 +149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0b3db99b6f67c49aa7b2fe3421e53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_UGuiType: 1
+  m_SiblingOnOpen: 2
+  m_ManageType: 1
+  m_AwakeOnOpen: 0
+  m_Id: 1
   m_Speed: 0.25
   m_SODamageData: {fileID: 11400000, guid: bc8624015d9a91841ab46d01a67829d6, type: 2}
 --- !u!95 &-1328591494819506317

@@ -7,47 +7,54 @@ namespace Anchor.Core.Pool
 
     public class Pool<T> : IDisposable
     {
-        private Queue<T> m_InactiveObjects;
+        private List<T> m_InactiveObjects;
         private List<T> m_ActiveObjects;
-        private Func<T> m_ObjectGenerator;
-        private int m_MaxPoolSize;
 
+        private int m_MaxPoolSize;
         private int m_ActiveCount = 0;
 
-        public Pool(Func<T> objectGenerator, int initGenerateCount, int initalCapacity, int maxPoolSize = 0)
+        public Pool(T component, int initalGenerateCount, int initalCapacity, int maxPoolSize = 0)
         {
-            m_ObjectGenerator = objectGenerator;
             m_MaxPoolSize = maxPoolSize;
 
             if (m_MaxPoolSize > 0)
             {
-                if (initGenerateCount > m_MaxPoolSize)
+                if (initalGenerateCount > m_MaxPoolSize)
                 {
-                    initGenerateCount = m_MaxPoolSize;
+                    initalGenerateCount = m_MaxPoolSize;
                 }
 
                 if (initalCapacity > m_MaxPoolSize)
                 {
                     initalCapacity = m_MaxPoolSize;
                 }
-                else if (initalCapacity < initGenerateCount)
+                else if (initalCapacity < initalGenerateCount)
                 {
-                    initalCapacity = initGenerateCount;
+                    initalCapacity = initalGenerateCount;
                 }
             }
 
-            m_InactiveObjects = new Queue<T>(initalCapacity);
+            m_InactiveObjects = new List<T>(initalCapacity);
             m_ActiveObjects = new List<T>(initalCapacity);
 
-            for(int i = 0; i < initGenerateCount; ++i)
-            {
-                m_InactiveObjects.Enqueue(objectGenerator());
-            }
+            m_InactiveObjects.Add(component);
         }
 
         ~Pool()
         {
             Clear();
+        }
+
+        public void Add(T component)
+        {
+            if(m_MaxPoolSize <= m_InactiveObjects.Count + m_ActiveObjects.Count)
+            {
+                throw new Exception("pool is fulled");
+            }
+            else
+            {
+                m_InactiveObjects.Add(component);
+            }
         }
 
         public T Get()
@@ -56,16 +63,16 @@ namespace Anchor.Core.Pool
 
             if(m_InactiveObjects.Count > 0)
             {
-                item = m_InactiveObjects.Dequeue();
+                int idx = m_InactiveObjects.Count - 1;
+                item = m_InactiveObjects[idx];
+                m_InactiveObjects.RemoveAt(idx);
             }
             else
             {
-                if(m_MaxPoolSize > 0 && m_MaxPoolSize <= m_ActiveCount)
+                if(m_MaxPoolSize <= m_InactiveObjects.Count + m_ActiveObjects.Count)
                 {
                     throw new Exception("pool is fulled");
                 }
-
-                item = m_ObjectGenerator();
             }
 
             m_ActiveObjects.Add(item);
@@ -89,7 +96,7 @@ namespace Anchor.Core.Pool
             m_ActiveObjects.Remove(item);
             m_ActiveCount--;
 
-            m_InactiveObjects.Enqueue(item);
+            m_InactiveObjects.Add(item);
         }
 
         public void ReturnAll()
@@ -104,7 +111,7 @@ namespace Anchor.Core.Pool
         {
             foreach(var item in m_ActiveObjects)
             {
-                m_InactiveObjects.Enqueue(item);
+                m_InactiveObjects.Add(item);
             }
 
             m_ActiveObjects.Clear();
