@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8169229864424716941}
   - component: {fileID: 8169229864424716940}
   - component: {fileID: 2995307005185859707}
+  - component: {fileID: 1673442673097923263}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -111,7 +112,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ad8baf7cdef9a40a0c5b2a8e0847e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SOStatusData: {fileID: 11400000, guid: 58652707f4a63bc4399dcb79eae14095, type: 2}
   m_DamageTextPivot: {fileID: 3005097118569855758}
+--- !u!114 &1673442673097923263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8169229864424716943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a47ef0a06898848b31ab619d9aa85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PivotInfos:
+  - m_PivotType: 0
+    m_Pivot: {fileID: 3005097118569855758}
+    m_PositionOffset: {x: 0, y: 0, z: 0}
+    m_RotationOffset: {x: 0, y: 0, z: 0}
+    m_ScaleOffset: {x: 1, y: 1, z: 1}
 --- !u!1 &8831044668867796703
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3005097118569855758}
   m_Layer: 0
-  m_Name: Pivot_DamageText
+  m_Name: Pivot_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

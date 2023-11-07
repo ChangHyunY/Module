@@ -2,6 +2,7 @@ using Anchor.Core.Pool;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Anchor.Unity.Actor;
 
 namespace Witch
 {
@@ -51,6 +52,9 @@ namespace Witch
             return points;
         }
 
-        public Vector3 GetRandomObjectPosition => m_Pool[Random.Range(0, m_Pool.Count)].GetDamageTextPivoePosition;
+        public Vector3 GetRandomObjectPosition()
+        {
+            return m_Pool [Random.Range(0, m_Pool.Count)].PivotAgent.GetPivot(PivotType.UI).Pivot.position;
+        }
     }
 }

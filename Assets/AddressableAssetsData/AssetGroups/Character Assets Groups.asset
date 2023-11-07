@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Character Assets Groups
+  m_EditorClassIdentifier: 
+  m_GroupName: Character Assets Groups
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 24a0079a9f8975d42a6aa12bb07fdea9
+  m_SerializeEntries:
+  - m_GUID: 577140fa24ae66e4582746143bbd5e05
+    m_Address: Assets/Resource/Character/Assets
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7d68f5f23810f1346a3429f13bca83fb
+    m_Address: Assets/Resource/Character/References
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 2b024d508fc20a84a90321b4437a32a1, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 4857c1743ae50ed4295e10b761550b7c, type: 2}
+    - {fileID: 11400000, guid: 52785e3814ecc4548ae4a2a8227c6d66, type: 2}

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Witch.Actor
+namespace Anchor.Unity.Actor
 {
-    public abstract class BaseActor : MonoBehaviour
+    public abstract class BaseActor
     {
         private static int s_NextValidID = 0;
 
@@ -19,11 +19,25 @@ namespace Witch.Actor
             get => m_ID;
         }
 
+        protected Animator m_Animator;
+        public Animator Animator
+        {
+            get => m_Animator;
+            set => m_Animator = value;
+        }
+
+        protected StatusAgent m_StatusAgent;
+        public StatusAgent StatusAgent
+        {
+            get => m_StatusAgent;
+            set => m_StatusAgent = value;
+        }
+
         public virtual void Setup()
         {
             ID = s_NextValidID;
         }
 
-        protected abstract void Updated();
+        public abstract void Updated();
     }
 }

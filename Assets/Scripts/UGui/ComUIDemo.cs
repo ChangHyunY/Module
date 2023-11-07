@@ -56,7 +56,7 @@ namespace Witch
                     DialogId.DamageText,
                     $"{Random.Range(10, 500)}",
                     Random.Range(0, System.Enum.GetValues(typeof(DamageId)).Length),
-                    ComSpawner.Root.GetRandomObjectPosition
+                    ComSpawner.Root.GetRandomObjectPosition()
                     );
         }
 
