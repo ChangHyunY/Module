@@ -28,6 +28,7 @@ namespace Anchor.Unity.Actor
         public void ChangeState(State<T> newState)
         {
             if (newState == null) return;
+            if (m_CurrentState == newState) return;
 
             if (m_CurrentState != null)
             {

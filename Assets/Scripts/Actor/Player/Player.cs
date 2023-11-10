@@ -5,16 +5,27 @@ using Anchor.Unity.Actor.PlayerStates;
 
 namespace Anchor.Unity.Actor
 {
-    public enum PlayerState { Idle, Walk, Run, Attack01 }
+    public enum PlayerState { Idle, Walk, Run, Attack, Defend, Die, DieRecover, Dizzy, GetHit }
 
     public class Player : BaseActor
     {
+        private ComPlayer m_ComPlayer;
         private State<Player>[] m_States;
         private StateMachine<Player> m_StateMachine;
+
+        public ComPlayer ComPlayer
+        {
+            get => m_ComPlayer;
+        }
 
         public StateMachine<Player> StateMachine
         {
             get => m_StateMachine;
+        }
+
+        public Player(ComPlayer actor)
+        {
+            m_ComPlayer = actor;
         }
 
         public override void Setup()
@@ -25,7 +36,7 @@ namespace Anchor.Unity.Actor
             m_States[(int)PlayerState.Idle] = new Idle();
             m_States[(int)PlayerState.Walk] = new Walk();
             m_States[(int)PlayerState.Run] = new Run();
-            m_States[(int)PlayerState.Attack01] = new Attack();
+            m_States[(int)PlayerState.Attack] = new Attack();
 
             m_StateMachine = new StateMachine<Player>();
             m_StateMachine.Setup(this, m_States[(int)PlayerState.Idle]);

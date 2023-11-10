@@ -11,6 +11,7 @@ namespace Anchor.Unity
         Login,
         Start,
         Demo,
+        Field_01,
     }
 
     public class ResourceHelper
@@ -25,6 +26,7 @@ namespace Anchor.Unity
             "Assets/Scenes/Login.unity",
             "Assets/Scenes/Start.unity",
             "Assets/Scenes/Demo.unity",
+            "Assets/Resource/Field/Scene/rpgpp_lt_scene_1.0.unity",
         };
 
         public static void Initalize()
@@ -61,6 +63,10 @@ namespace Anchor.Unity
 
             switch (scene)
             {
+                case SceneId.Demo:
+                    LoadDemoScene(keys, scene, callback);
+                    break;
+
                 default:
                     LoadDefaultScene(keys, scene, callback);
                     break;
@@ -93,12 +99,44 @@ namespace Anchor.Unity
                 Debug.LogError("scene load fail");
                 yield break;
             }
+        }
 
-            //canvas get
-            //foreach (var asset in keys)
-            //{
-            //    yield return s_GameObjectBags[(int)GameObjectBagId.Normal].Get<RectTransform>(asset);
-            //}
+        private static void LoadDemoScene(string[] keys, SceneId id, System.Action<bool> callback = null)
+        {
+            ComMain.Root.StartCoroutine(CoLoadDemoScene(keys, id, callback));
+        }
+
+        private static IEnumerator CoLoadDemoScene(string[] keys, SceneId id, System.Action<bool> callback = null)
+        {
+            //assets load
+            foreach (var asset in keys)
+            {
+                yield return s_GameObjectBags[(int)GameObjectBagId.Normal].CoLoad(asset, ManageType.Default);
+            }
+
+            //demo scene load
+            bool success = false;
+
+            yield return ResourceManager.CoLoadSceneAsync(k_SceneNames[(int)id], UnityEngine.SceneManagement.LoadSceneMode.Single, (result) =>
+            {
+                success = result;
+            });
+
+            if (!success)
+            {
+                Debug.LogError($"{id} scene load fail");
+            }
+
+            //field scene load
+            yield return ResourceManager.CoLoadSceneAsync(k_SceneNames[(int)SceneId.Field_01], UnityEngine.SceneManagement.LoadSceneMode.Additive, (result) =>
+            {
+                success = result;
+            });
+
+            if (!success)
+            {
+                Debug.LogError($"{SceneId.Field_01} scene load fail");
+            }
         }
     }
 }

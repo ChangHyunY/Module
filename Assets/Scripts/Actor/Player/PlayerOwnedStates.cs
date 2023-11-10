@@ -29,6 +29,8 @@ namespace Anchor.Unity.Actor.PlayerStates
 
         public override void Excute(Player actor)
         {
+            actor.ComPlayer.ComPlayerController.LookAtDirection();
+            actor.ComPlayer.ComPlayerController.Move();
         }
 
         public override void Exit(Player actor)
@@ -54,9 +56,11 @@ namespace Anchor.Unity.Actor.PlayerStates
 
     public class Attack : State<Player>
     {
+        enum AttackType { Attack01, Attack02 }
+
         public override void Enter(Player actor)
         {
-            actor.Animator.Play(PlayerState.Attack01.ToString());
+            actor.Animator.Play(PlayerState.Attack.ToString());
         }
 
         public override void Excute(Player actor)

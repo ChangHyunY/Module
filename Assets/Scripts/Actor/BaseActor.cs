@@ -26,12 +26,19 @@ namespace Anchor.Unity.Actor
             set => m_Animator = value;
         }
 
+        protected CharacterController m_CharacterController;
+        public CharacterController Controller
+        {
+            get => m_CharacterController;
+            set => m_CharacterController = value;
+        }
+
         protected StatusAgent m_StatusAgent;
         public StatusAgent StatusAgent
         {
             get => m_StatusAgent;
             set => m_StatusAgent = value;
-        }
+        }        
 
         public virtual void Setup()
         {
