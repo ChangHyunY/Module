@@ -58,9 +58,27 @@ namespace Anchor.Unity.Actor.PlayerStates
     {
         enum AttackType { Attack01, Attack02 }
 
+        private int m_MaxIdx;
+        private short m_Idx;
+        private AttackType m_AttackType;
+
+        public Attack()
+        {
+            m_MaxIdx = System.Enum.GetValues(typeof(AttackType)).Length;
+            m_Idx = 0;
+            m_AttackType = AttackType.Attack01;
+        }
+
         public override void Enter(Player actor)
         {
-            actor.Animator.Play(PlayerState.Attack.ToString());
+            actor.Animator.Play(m_AttackType.ToString());
+            
+            if(++m_Idx >m_MaxIdx - 1)
+            {
+                m_Idx = 0;
+            }
+
+            m_AttackType = (AttackType)m_Idx;
         }
 
         public override void Excute(Player actor)

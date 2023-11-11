@@ -22,6 +22,9 @@ namespace Anchor.Unity.Actor
 
             m_ComPlayerController = GetComponent<ComPlayerController>();
             m_ComPlayerController.Setup(m_BaseActor as Player);
+
+            // TODO : think wru using this code
+            Camera.main.GetComponent<Anchor.Unity.Cameras.ComQViewCamera>().Setup(transform);
         }
     }
 }

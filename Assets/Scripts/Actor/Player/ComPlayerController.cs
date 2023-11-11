@@ -24,12 +24,12 @@ namespace Anchor.Unity.Actor
             m_Player = player;
         }
 
-        // InputSystem Send Message
+        #region InputSystem Send Message
         private void OnMove(InputValue value)
         {
             Vector2 input = value.Get<Vector2>();
 
-            if(input.magnitude > 0)
+            if (input.magnitude > 0)
             {
                 m_Direction = new Vector3(input.x, 0f, input.y);
                 m_Player.ChangeState(PlayerState.Walk);
@@ -39,6 +39,15 @@ namespace Anchor.Unity.Actor
                 m_Player.ChangeState(PlayerState.Idle);
             }
         }
+
+        private void OnAttack(InputValue value)
+        {
+            if (value.isPressed)
+            {
+                m_Player.ChangeState(PlayerState.Attack);
+            }
+        }
+        #endregion
 
         public void Move()
         {

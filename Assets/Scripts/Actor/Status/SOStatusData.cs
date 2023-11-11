@@ -22,7 +22,6 @@ namespace Anchor.Unity.Actor
             for(int i = 0, loop = m_Keys.Count; i < loop; ++i)
             {
                 result.Add(m_Keys[i], m_Values[i]);
-                Debug.Log($"{m_Keys[i]}, {m_Values[i]}");
             }
 
             return result;

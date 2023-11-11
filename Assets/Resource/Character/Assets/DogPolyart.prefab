@@ -1375,6 +1375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SOStatusData: {fileID: 11400000, guid: 50be3bbb6909645438fede684b7bfb45, type: 2}
+  m_Gravity: 9.8
+  m_verticalSpeed: 0
 --- !u!114 &1999738062104380838
 MonoBehaviour:
   m_ObjectHideFlags: 0

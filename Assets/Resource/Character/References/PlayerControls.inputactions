@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jump",
+                    "name": "Attack",
                     "type": "Value",
                     "id": "77bc376d-e3b2-436e-9936-8fed5b319bae",
                     "expectedControlType": "",
@@ -94,11 +94,11 @@
                 {
                     "name": "",
                     "id": "9fb79ea3-5f19-428e-bb05-281a15fb4eee",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
-                    "action": "Jump",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

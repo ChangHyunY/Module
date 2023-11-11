@@ -20,6 +20,10 @@ namespace Anchor.Unity.Actor
 
         [SerializeField] protected SOStatusData m_SOStatusData;
 
+        [SerializeField] float m_Gravity = 9.8f;
+        [SerializeField] float m_verticalSpeed = 0.0f;
+
+
         protected virtual void Awake() 
         {
             m_PivotAgent = GetComponent<ComPivotAgent>();
@@ -34,7 +38,25 @@ namespace Anchor.Unity.Actor
 
         private void Update()
         {
+            ApplyGravity();
             m_BaseActor.Updated();
+        }
+
+        private void ApplyGravity()
+        {
+            if (BaseActor.Controller == null) return;
+
+            if(BaseActor.Controller.isGrounded)
+            {
+                m_verticalSpeed = -m_Gravity * Time.deltaTime;
+            }
+            else
+            {
+                m_verticalSpeed -= m_Gravity * Time.deltaTime;
+            }
+
+            Vector3 moveDirection = new Vector3(0, m_verticalSpeed, 0);
+            BaseActor.Controller.Move(moveDirection * Time.deltaTime);
         }
     }
 }
