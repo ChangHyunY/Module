@@ -19,7 +19,7 @@ namespace Anchor.Unity.Addressables
 
         private string m_RootGameObjectName = null;
         private GameObject m_RootGameObject = null;
-        private bool m_RootGameOBjectDontDestroy;
+        private bool m_RootGameObjectDontDestroy;
 
         public int Id => m_Id;
 
@@ -27,7 +27,7 @@ namespace Anchor.Unity.Addressables
         {
             m_Id = id;
             m_RootGameObjectName = rootGameObjectName;
-            m_RootGameOBjectDontDestroy = rootGameObjectDontDestroy;
+            m_RootGameObjectDontDestroy = rootGameObjectDontDestroy;
         }
 
         public bool IsLoaded(string addressable)

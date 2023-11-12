@@ -40,8 +40,6 @@ namespace Anchor.Unity.Addressables
                         opHandle.Result != null &&
                         opHandle.Result.Count > 0)
                     {
-                        //m_AssetPaths.Add(assetRef.AssetGUID, opHandle.Result[0].PrimaryKey);
-                        //return opHandle.Result[0].PrimaryKey;
                         m_AssetPaths.Add(assetRef.AssetGUID, opHandle.Result[0].InternalId);
                         return opHandle.Result[0].InternalId;
                     }

@@ -16,7 +16,7 @@ public class ComUILogin : ComPanel<ComUILogin>
     {
     }
 
-    protected override void OnSetBenText(string[] text)
+    protected override void OnSetBtnText(string[] text)
     {
     }
 

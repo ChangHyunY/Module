@@ -12,6 +12,11 @@ namespace Anchor.Unity.Addressables
         private ManageType m_ManageType;
         private bool m_Poolable = false;
 
+        public AsyncOperationHandle Handle
+        {
+            get => m_Handle;
+        }
+
         public GameObject Asset => m_Asset;
 
         public ManageType ManageType => m_ManageType;
@@ -27,6 +32,7 @@ namespace Anchor.Unity.Addressables
             m_Handle = handle;
             m_Asset = asset;
             m_ManageType = manageType;
+            m_Poolable = manageType == ManageType.Pool;
         }
     }
 }

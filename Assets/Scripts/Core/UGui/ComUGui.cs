@@ -48,6 +48,6 @@ namespace Anchor.Unity.UGui
         public abstract int GetID();
 
         protected abstract void OnSetData(System.EventArgs args);
-        protected abstract void OnSetBenText(string[] text);
+        protected abstract void OnSetBtnText(string[] text);
     }
 }

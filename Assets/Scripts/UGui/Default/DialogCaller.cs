@@ -21,6 +21,27 @@ namespace Witch
 
     public static class DialogCaller
     {
+        public static void SampleCall()
+        {
+            OnDialog(DialogId.CommonDialog, "Title", "Content", (btnId, args) =>
+            {
+                switch (btnId)
+                {
+                    case 0:
+                        Anchor.ComMain.Root.DebugMessage("First args function");
+                        break;
+
+                    case 1:
+                        Anchor.ComMain.Root.DebugMessage("Second args function");
+                        break;
+
+                    case 2:
+                        Anchor.ComMain.Root.DebugMessage("Third args function");
+                        break;
+                }
+            });
+        }
+
         public static void OnDialog(DialogId dialogId, string title, string content, System.Action<int, System.EventArgs> clickCallback = null)
         {
             var data = new Args<DefaultCommonDialogData>() { Arg1 = new DefaultCommonDialogData(title, content) };

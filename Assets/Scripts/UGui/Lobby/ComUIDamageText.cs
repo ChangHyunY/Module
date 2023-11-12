@@ -63,7 +63,7 @@ namespace Witch
             m_Value = value.Arg1;
         }
 
-        protected override void OnSetBenText(string[] text)
+        protected override void OnSetBtnText(string[] text)
         {
         }
     }

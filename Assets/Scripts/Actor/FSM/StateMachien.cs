@@ -40,7 +40,7 @@ namespace Anchor.Unity.Actor
             m_CurrentState.Enter(m_Actor);
         }
 
-        public void ReverToPreviousState()
+        public void RevertToPreviousState()
         {
             ChangeState(m_PreviousState);
         }

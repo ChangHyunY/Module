@@ -85,7 +85,7 @@ namespace Anchor.Unity.Actor.PlayerStates
         {
             if(actor.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
             {
-                actor.StateMachine.ReverToPreviousState();
+                actor.StateMachine.RevertToPreviousState();
             }
         }
 

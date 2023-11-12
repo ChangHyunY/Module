@@ -6,13 +6,14 @@ namespace Anchor
 {
     public class ComMain : MonoBehaviour
     {
-        public static ComMain Root;
+        private static ComMain s_Root = null;
+        public static ComMain Root => s_Root;
 
         [SerializeField] UnityEngine.EventSystems.EventSystem s_EventSystem;
 
         private void Awake()
         {
-            Root = this;
+            s_Root = this;
 
             DontDestroyOnLoad(this);
             DontDestroyOnLoad(s_EventSystem);
