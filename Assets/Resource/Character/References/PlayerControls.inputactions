@@ -50,7 +50,7 @@
                 {
                     "name": "Up",
                     "id": "8513e5f5-2d97-4b52-b98a-4e564d0a4ad2",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
@@ -61,7 +61,7 @@
                 {
                     "name": "Down",
                     "id": "4f64aedc-0918-439a-b91e-f6f9a7fb678e",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
@@ -72,7 +72,7 @@
                 {
                     "name": "Left",
                     "id": "2371ff38-5914-4eb0-bcea-6193953e6a50",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
@@ -83,7 +83,7 @@
                 {
                     "name": "Right",
                     "id": "519f5c04-fd48-4733-bc5a-a327c28c6757",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
@@ -94,7 +94,7 @@
                 {
                     "name": "",
                     "id": "9fb79ea3-5f19-428e-bb05-281a15fb4eee",
-                    "path": "<Keyboard>/ctrl",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
@@ -112,6 +112,11 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }

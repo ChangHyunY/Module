@@ -38,6 +38,8 @@ namespace Anchor.Unity.Actor
 
             m_CurrentState = newState;
             m_CurrentState.Enter(m_Actor);
+
+            ComMain.Root.DebugMessage($"Current State : {m_CurrentState}");
         }
 
         public void RevertToPreviousState()

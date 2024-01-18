@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bdc66dc973d084c99436fbe8267786, type: 3}
+  m_Name: MagicMissileBuff
+  m_EditorClassIdentifier: 
+  id: 0
+  skillBuffs:
+  - id: 0
+    buffId: 0
+    title: "\uC624\uC220 \uBBF8\uC0AC\uC77C"
+    content: "\uC624\uC220 \uBBF8\uC0AC\uC77C \uC7A0\uAE08 \uD574\uC81C"
+    icon: {fileID: 21300000, guid: 14a772420493d56439350dc341b2db2a, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 
+  - id: 0
+    buffId: 1
+    title: "\uC624\uC220 \uBBF8\uC0AC\uC77C \uC99D\uD3ED"
+    content: "\uC624\uC220 \uBBF8\uC0AC\uC77C \uD53C\uD574 +60%"
+    icon: {fileID: 21300000, guid: 14a772420493d56439350dc341b2db2a, type: 3}
+    count: 3
+    skillStatusType: 03000000
+    buffValue:
+    - 60
+    buffChains: 0200000003000000
+  - id: 0
+    buffId: 2
+    title: "\uBBF8\uC0AC\uC77C \uC5F0\uBC1C \uC0AC\uACA9"
+    content: "\uC624\uC220 \uBBF8\uC0AC\uC77C 1\uD68C \uCD94\uAC00 \uC2DC\uC804,
+      \uD53C\uD574 -30%"
+    icon: {fileID: 21300000, guid: 14a772420493d56439350dc341b2db2a, type: 3}
+    count: 1
+    skillStatusType: 05000000
+    buffValue:
+    - 1
+    buffChains: 
+  - id: 0
+    buffId: 3
+    title: "\uD655\uC0B0\uB41C \uBBF8\uC0AC\uC77C"
+    content: "\uC624\uC220 \uBBF8\uC0AC\uC77C\uC774 \uBAAC\uC2A4\uD130\uB97C \uBA85\uC911\uD55C
+      \uD6C4 \uBCF4\uC870 \uC624\uC220 \uBBF8\uC0AC\uC77C\uC744 2\uD68C \uC2DC\uC804\uD569\uB2C8\uB2E4."
+    icon: {fileID: 21300000, guid: 14a772420493d56439350dc341b2db2a, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 04000000
+  - id: 0
+    buffId: 5
+    title: "\uBBF8\uC0AC\uC77C \uC77C\uC81C \uC0AC\uACA9"
+    content: "\uC624\uC220 \uBBF8\uC0AC\uC77C \uD0C4\uC54C +1, \uD53C\uD574 -20%"
+    icon: {fileID: 21300000, guid: 14a772420493d56439350dc341b2db2a, type: 3}
+    count: 1
+    skillStatusType: 06000000
+    buffValue:
+    - 1
+    buffChains: 
+  - id: 0
+    buffId: 6
+    title: "\uAD00\uD1B5 \uBBF8\uC0AC\uC77C"
+    content: "\uC624\uC220 \uBBF8\uC0AC\uC77C \uD53C\uD574 +30%, \uAD00\uD1B5 +1"
+    icon: {fileID: 21300000, guid: 14a772420493d56439350dc341b2db2a, type: 3}
+    count: 1
+    skillStatusType: 0300000004000000
+    buffValue:
+    - 30
+    - 1
+    buffChains: 

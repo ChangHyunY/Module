@@ -12,6 +12,7 @@ namespace Anchor.Unity
         Start,
         Demo,
         Field_01,
+        Defense,
     }
 
     public class ResourceHelper
@@ -27,6 +28,7 @@ namespace Anchor.Unity
             "Assets/Scenes/Start.unity",
             "Assets/Scenes/Demo.unity",
             "Assets/Resource/Field/Scene/rpgpp_lt_scene_1.0.unity",
+            "Assets/Scenes/Defense.unity",
         };
 
         public static void Initalize()

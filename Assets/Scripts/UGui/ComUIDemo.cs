@@ -2,22 +2,20 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Anchor.Unity;
 using Anchor.Unity.UGui.Panel;
+using System.Collections.Generic;
 
 namespace Witch
 {
     public enum DemoUIId
     {
         DamageText,
-        CommonDialog,
+        HpBar,
     }
 
     public class ComUIDemo : ComPanel<ComUIDemo>
     {
-        [SerializeField] AssetReference m_DamageTextRef;
-        [SerializeField] Transform m_RootDamageText;
-
-        [SerializeField] Transform m_CommonDialog;
-        [SerializeField] Transform m_RootCommonDialog;
+        [SerializeField] List<AssetReference> m_AssetRefs;
+        [SerializeField] List<Transform> m_DialogRoots;
 
         protected override void OnInit()
         {
@@ -44,9 +42,12 @@ namespace Witch
         {
             for (int i = 0, loop = 16; i < loop; ++i)
             {
-                var go = ResourceHelper.GameObjectBags[(int)GameObjectBagId.Normal].Get<ComUIDamageText>(m_DamageTextRef);
-                go.transform.SetParent(m_RootDamageText);
+                ComUIDamageText damageText = ResourceHelper.GameObjectBags[(int)GameObjectBagId.Normal].Get<ComUIDamageText>(m_AssetRefs[(int)DemoUIId.DamageText]);
+                damageText.transform.SetParent(m_DialogRoots[(int)DemoUIId.DamageText]);
             }
+
+            ComUIHpBar hpBar = ResourceHelper.GameObjectBags[(int)GameObjectBagId.Normal].Get<ComUIHpBar>(m_AssetRefs[(int)DemoUIId.HpBar]);
+            hpBar.transform.SetParent(m_DialogRoots[(int)DemoUIId.HpBar]);
         }
 
         // Button Event

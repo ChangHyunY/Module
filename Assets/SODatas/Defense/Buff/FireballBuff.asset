@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bdc66dc973d084c99436fbe8267786, type: 3}
+  m_Name: FireballBuff
+  m_EditorClassIdentifier: 
+  id: 1
+  skillBuffs:
+  - id: 1
+    buffId: 9
+    title: "\uD654\uAD6C\uC220"
+    content: "\uD654\uAD6C\uC220 \uC7A0\uAE08 \uD574\uC81C"
+    icon: {fileID: 21300000, guid: 3d8a5e6e45007a449a5f4e3c8768a62f, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 020000000300000004000000
+  - id: 1
+    buffId: 10
+    title: "\uD654\uAD6C \uD3ED\uBC1C"
+    content: "\uD654\uAD6C \uD3ED\uBC1C \uBC94\uC704 +80%"
+    icon: {fileID: 21300000, guid: 3d8a5e6e45007a449a5f4e3c8768a62f, type: 3}
+    count: 1
+    skillStatusType: 07000000
+    buffValue:
+    - 80
+    buffChains: 
+  - id: 1
+    buffId: 11
+    title: "\uD654\uAD6C \uD3ED\uD30C"
+    content: "\uD654\uAD6C \uD3ED\uBC1C \uD53C\uD574 +80%"
+    icon: {fileID: 21300000, guid: 3d8a5e6e45007a449a5f4e3c8768a62f, type: 3}
+    count: 3
+    skillStatusType: 08000000
+    buffValue:
+    - 80
+    buffChains: 0c0000000d000000
+  - id: 1
+    buffId: 12
+    title: "\uD654\uAD6C \uBD88\uAF43"
+    content: "\uD654\uAD6C\uAC00 \uD3ED\uBC1C \uD6C4 \uBD88\uAF43 3\uAC1C\uB97C \uC2DC\uC804\uD569\uB2C8\uB2E4."
+    icon: {fileID: 21300000, guid: 3d8a5e6e45007a449a5f4e3c8768a62f, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 
+  - id: 1
+    buffId: 13
+    title: "\uD654\uAD6C \uC5F0\uC18C"
+    content: "\uD654\uAD6C\uAC00 \uD3ED\uBC1C\uD558\uBA74 6\uCD08 \uB3D9\uC548 \uBAAC\uC2A4\uD130\uB97C
+      \uC5F0\uC18C\uD569\uB2C8\uB2E4."
+    icon: {fileID: 21300000, guid: 3d8a5e6e45007a449a5f4e3c8768a62f, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 
+  - id: 1
+    buffId: 14
+    title: "\uD654\uAD6C \uCDA9\uACA9"
+    content: "\uD654\uAD6C \uCDA9\uACA9 \uD53C\uD574 +80%"
+    icon: {fileID: 21300000, guid: 3d8a5e6e45007a449a5f4e3c8768a62f, type: 3}
+    count: 3
+    skillStatusType: 03000000
+    buffValue:
+    - 80
+    buffChains: 
+  - id: 1
+    buffId: 15
+    title: "\uD654\uAD6C \uCF64\uBCF4"
+    content: "\uD654\uAD6C\uC220 \uD53C\uD574 -20%, \uCD94\uAC00\uB85C 1\uD68C \uC2DC\uC804\uD569\uB2C8\uB2E4."
+    icon: {fileID: 21300000, guid: 3d8a5e6e45007a449a5f4e3c8768a62f, type: 3}
+    count: 2
+    skillStatusType: 030000000800000005000000
+    buffValue:
+    - -20
+    - -20
+    - 1
+    buffChains: 10000000
+  - id: 1
+    buffId: 16
+    title: "\uD654\uAD6C \uCF64\uBCF4 2"
+    content: "\uD654\uAD6C\uC220 \uD53C\uD574\uAC00 30% \uAC10\uC18C\uD558\uACE0,
+      \uCD94\uAC00\uB85C 2\uD68C \uC2DC\uC804\uD569\uB2C8\uB2E4."
+    icon: {fileID: 21300000, guid: 3d8a5e6e45007a449a5f4e3c8768a62f, type: 3}
+    count: 1
+    skillStatusType: 030000000800000005000000
+    buffValue:
+    - -30
+    - -30
+    - 2
+    buffChains: 

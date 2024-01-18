@@ -8,6 +8,8 @@ namespace Anchor.Unity.Actor.PlayerStates
     {
         public override void Enter(Player actor)
         {
+            Debug.Log("Idle Enter");
+
             actor.Animator.Play(PlayerState.Idle.ToString());
         }
 
@@ -17,6 +19,7 @@ namespace Anchor.Unity.Actor.PlayerStates
 
         public override void Exit(Player actor)
         {
+            Debug.Log("Idle Exit");
         }
     }
 
@@ -71,6 +74,8 @@ namespace Anchor.Unity.Actor.PlayerStates
 
         public override void Enter(Player actor)
         {
+            Debug.Log("Attack Enter");
+
             actor.Animator.Play(m_AttackType.ToString());
             
             if(++m_Idx >m_MaxIdx - 1)
@@ -83,14 +88,17 @@ namespace Anchor.Unity.Actor.PlayerStates
 
         public override void Excute(Player actor)
         {
+            Debug.Log($"Attack Excute ");
             if(actor.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
             {
-                actor.StateMachine.RevertToPreviousState();
+                //actor.StateMachine.RevertToPreviousState();
+                actor.StateMachine.ChangeState(actor.States[(int)PlayerState.Idle]);
             }
         }
 
         public override void Exit(Player actor)
         {
+            Debug.Log("Attack Exit");
         }
     }
 }

@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bdc66dc973d084c99436fbe8267786, type: 3}
+  m_Name: IceboltBuff
+  m_EditorClassIdentifier: 
+  id: 2
+  skillBuffs:
+  - id: 2
+    buffId: 17
+    title: "\uACE0\uB4DC\uB984"
+    content: "\uACE0\uB4DC\uB984 \uC7A0\uAE08 \uD574\uC81C"
+    icon: {fileID: 21300000, guid: fa1571192867a6b45b1511da9e020129, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 1200000013000000
+  - id: 2
+    buffId: 18
+    title: "\uACE0\uB4DC\uB984 \uD53C\uD574 \uC99D\uD3ED"
+    content: "\uACE0\uB4DC\uB984 \uD53C\uD574 +60%"
+    icon: {fileID: 21300000, guid: fa1571192867a6b45b1511da9e020129, type: 3}
+    count: 3
+    skillStatusType: 
+    buffValue: []
+    buffChains: 
+  - id: 2
+    buffId: 19
+    title: "\uADF9\uD55C\uC758 \uACE0\uB4DC\uB984"
+    content: "\uACE0\uB4DC\uB984 \uD53C\uD574 +30%, \uBA85\uC911 \uC2DC \uBAAC\uC2A4\uD130\uB97C
+      2\uCD08 \uB3D9\uC548 \uB3D9\uACB0\uD569\uB2C8\uB2E4."
+    icon: {fileID: 21300000, guid: fa1571192867a6b45b1511da9e020129, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 1400000015000000
+  - id: 2
+    buffId: 20
+    title: "\uC0BC\uAC01 \uACE0\uB4DC\uB984"
+    content: "\uACE0\uB4DC\uB984\uC744 \uC0BC\uAC01 \uACE0\uB4DC\uB984\uC73C\uB85C
+      \uBCC0\uD654\uD558\uACE0, \uBA85\uC911 \uC2DC \uBAA8\uB4E0 \uAC15\uD654 \uD6A8\uACFC\uB97C
+      \uCD94\uAC00\uD55C \uACE0\uB4DC\uB984\uC774 \uBD84\uC5F4\uB429\uB2C8\uB2E4."
+    icon: {fileID: 21300000, guid: fa1571192867a6b45b1511da9e020129, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 
+  - id: 2
+    buffId: 21
+    title: "\uC2DD\uACE8 \uD55C\uAE30"
+    content: "\uACE0\uB4DC\uB984\uC5D0 \uBA85\uC911 \uC2DC 5\uD68C \uC911\uCCA9\uD560
+      \uC218 \uC788\uB294 \uB3D9\uC0C1\uC744 10\uCD08 \uB3D9\uC548 \uC2DC\uC804\uD569\uB2C8\uB2E4."
+    icon: {fileID: 21300000, guid: fa1571192867a6b45b1511da9e020129, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 
+  - id: 2
+    buffId: 22
+    title: "\uACE0\uB4DC\uB984 \uAD00\uD1B5"
+    content: "\uACE0\uB4DC\uB984 \uD53C\uD574 +30%, \uAD00\uD1B5 +2"
+    icon: {fileID: 21300000, guid: fa1571192867a6b45b1511da9e020129, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 
+  - id: 2
+    buffId: 23
+    title: "\uACE0\uB4DC\uB984 \uC5F0\uBC1C"
+    content: "\uACE0\uB4DC\uB984 \uD53C\uD574 -20%, \uCD94\uAC00\uB85C 1\uD68C \uC2DC\uC804\uD569\uB2C8\uB2E4."
+    icon: {fileID: 21300000, guid: fa1571192867a6b45b1511da9e020129, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 
+  - id: 2
+    buffId: 24
+    title: "\uACE0\uB4DC\uB984 \uCDA9\uACA9"
+    content: "\uACE0\uB4DC\uB984 \uACA9\uD1F4 +200%, \uAD00\uD1B5 +2"
+    icon: {fileID: 21300000, guid: fa1571192867a6b45b1511da9e020129, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 
+  - id: 2
+    buffId: 25
+    title: "\uACE0\uB4DC\uB984 \uC77C\uC81C \uC0AC\uACA9"
+    content: "\uACE0\uB4DC\uB984 \uD0C4\uC54C +1, \uD53C\uD574 -40%"
+    icon: {fileID: 21300000, guid: fa1571192867a6b45b1511da9e020129, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 
+  - id: 2
+    buffId: 26
+    title: "\uACE0\uB4DC\uB984 \uBD84\uC5F4"
+    content: "\uACE0\uB4DC\uB984\uC774 \uBAAC\uC2A4\uD130\uC5D0 \uBA85\uC911\uD558\uBA74
+      3\uAC1C\uC758 \uC791\uC740 \uACE0\uB4DC\uB984\uC73C\uB85C \uBD84\uC5F4\uD569\uB2C8\uB2E4."
+    icon: {fileID: 21300000, guid: fa1571192867a6b45b1511da9e020129, type: 3}
+    count: 1
+    skillStatusType: 
+    buffValue: []
+    buffChains: 

@@ -18,6 +18,11 @@ namespace Anchor.Unity.Actor
             get => m_ComPlayer;
         }
 
+        public State<Player>[] States
+        {
+            get => m_States;
+        }
+
         public StateMachine<Player> StateMachine
         {
             get => m_StateMachine;

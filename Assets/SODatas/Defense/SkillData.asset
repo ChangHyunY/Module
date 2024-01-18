@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82587ac1f9552948a2666461835a878, type: 3}
+  m_Name: SkillData
+  m_EditorClassIdentifier: 
+  skillDatas:
+  - id: 0
+    type: 0
+    title: "\uC624\uC220 \uBBF8\uC0AC\uC77C"
+    cooldown: 2
+    skillRange: 16
+    moveSpeed: 20
+    defaultDamage: 100
+    penetrate: 0
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 0100000005000000
+  - id: 1
+    type: 1
+    title: "\uD654\uAD6C"
+    cooldown: 5
+    skillRange: 14
+    moveSpeed: 15
+    defaultDamage: 300
+    penetrate: 0
+    castCount: 1
+    explosionRange: 0.5
+    explosionDamage: 280
+    buffChains: 0a0000000b0000000e0000000f000000
+  - id: 2
+    type: 2
+    title: "\uACE0\uB4DC\uB984\uC220"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 6
+    type: 3
+    title: "\uBCBC\uB77D"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 7
+    type: 4
+    title: "\uD1B5\uB098\uBB34"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 8
+    type: 0
+    title: "\uD384\uC2A4 \uB808\uC774\uC800"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 9
+    type: 0
+    title: "\uC9D1\uAD11 \uB808\uC774"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 10
+    type: 2
+    title: "\uC2E0\uC131 \uC11C\uB9AC"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 11
+    type: 3
+    title: "\uBC88\uAC1C \uC0AC\uC2AC"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 12
+    type: 0
+    title: "\uC6B4\uC11D\uC220"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 13
+    type: 5
+    title: "\uD1A0\uB124\uC774\uB3C4"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 14
+    type: 3
+    title: "\uC804\uC790\uB9DD"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 15
+    type: 0
+    title: "\uC720\uD0C4"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 16
+    type: 5
+    title: "\uD5C8\uB9AC\uCF00\uC778\uC220"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 
+  - id: 17
+    type: 3
+    title: "\uBCFC \uD0C0\uC785 \uBC88\uAC1C"
+    cooldown: 4
+    skillRange: 15
+    moveSpeed: 22
+    defaultDamage: 80
+    penetrate: 3
+    castCount: 1
+    explosionRange: 0
+    explosionDamage: 0
+    buffChains: 

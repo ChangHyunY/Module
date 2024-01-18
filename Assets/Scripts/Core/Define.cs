@@ -8,6 +8,7 @@ public enum DialogId
 {
     CommonDialog,
     DamageText,
+    HpBar,
 }
 
 public enum PanelId
@@ -35,6 +36,109 @@ public enum DamageId
     Dodge,
 }
 
+public enum SkillType
+{
+    Normal,
+    Fire,
+    Ice,
+    Lightning,
+    Physicis,
+    Wind,
+}
+
+public enum SkillStatusType
+{
+    Cooldown,
+    SkillRange,
+    MoveSpeed,
+    DefaultDamage,
+    Pentrate,
+    CastCount,
+    InitCount,
+    ExplosionRange,
+    ExplosionDamage,
+}
+
+public enum SkillId
+{
+    MagicMissile,
+    Fireball,
+    Icebolt,
+}
+
+public enum SkillBuffId
+{
+    MagicMissile,
+    MagicMissileEnforce,
+    MagicMissileCombo,
+    MagicMissileSpread,
+    MagicMissileSpreadEnforce,
+    MagicMissileSalvo,
+    MagicMissilePenetrate,
+    MagicMissileExplosion,
+    MagicMissileExplosionEnforce,
+
+    Fireball,
+    FireballExplosionExpansion,
+    FireballExplosionEnforce,
+    FireballFlame,
+    FireballBurn,
+    FireballEnforce,
+    FireballCombo,
+    FireballCombo2,
+
+    Icebolt,
+    IceboltEnforce,
+    IceboltEntreme,
+    IceboltTriangle,
+    IceboltChill,
+    IceboltPenetrate,
+    IceboltCombo,
+    IceboltImpact,
+    IceboltSalvo,
+    IceboltSpread,
+
+    Thunderbolt,
+    ThunderboltEnforce,
+    ThunderboltStun,
+    ThunderboltCombo,
+
+    Log,
+    LogEnforce,
+    LogCombo,
+    LogExpansion,
+    LogImpact,
+
+    PulseLaser,
+    PulseLaserEnforce,
+
+    FocusLaser,
+    FocusLaserEnforce,
+    FocusLaserRefraction,
+    FocusLaserCombo,
+    FocusLaserFocus,
+    FocusLaserFocusExplosion,
+
+    Frost,
+    FrostEnforce,
+    FrostExpansion,
+    FrostCombo,
+
+    ChainLightning,
+
+    Meteor,
+
+    Tornado,
+
+    ElectronmicNet,
+
+    Grenade,
+
+    Hurricane,
+
+    BallTypeLightning,
+}
+
 public partial class Define
 {
     private static readonly string[] k_SoundAssets =
@@ -57,7 +161,13 @@ public partial class Define
         "Assets/Resource/Demo/Assets/Canvas_Demo.prefab",
         "Assets/Resource/Demo/Assets/CommonDialog.prefab",
         "Assets/Resource/Demo/Assets/Cube.prefab",
+        "Assets/Resource/Demo/Assets/HUD_HpBar.prefab",
         "Assets/Resource/Demo/Assets/TMP_Damage.prefab",
+    };
+
+    private static readonly string[] k_DefenseAssets =
+    {
+
     };
 
 
@@ -65,6 +175,7 @@ public partial class Define
     public static string[] LoginAssets => k_LoginAssets;
     public static string[] StartAssets => k_StartAssets;
     public static string[] DemoAssets => k_DemoAssets;
+    public static string[] DefenseAssets => k_DefenseAssets;
 
 
     private const string k_SoundPath = "Assets/Resource/Sound/Assets/";

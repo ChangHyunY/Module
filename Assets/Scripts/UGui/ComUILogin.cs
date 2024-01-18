@@ -33,6 +33,6 @@ public class ComUILogin : ComPanel<ComUILogin>
     public void OnClickGuest()
     {
         SoundManager.Play(SoundId.eft_ui_click_blop, SoundType.EFT);
-        ResourceHelper.LoadScene(SceneId.Start, Define.StartAssets);
+        ResourceHelper.LoadScene(SceneId.Defense, Define.DefenseAssets);
     }
 }
