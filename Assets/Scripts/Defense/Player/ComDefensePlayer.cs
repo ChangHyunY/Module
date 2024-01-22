@@ -12,8 +12,19 @@ public class ComDefensePlayer : MonoBehaviour
     public Transform m_SkillRoot;
 
     private SkillAgent m_SkillAgent;
+    private StateAgent m_StateAgent;
 
-    public SkillAgent SkillAgent => m_SkillAgent;
+    #region Property
+    public SkillAgent SkillAgent
+    {
+        get => m_SkillAgent;
+    }
+
+    public StateAgent StateAgent
+    {
+        get => m_StateAgent;
+    }
+    #endregion
 
     private void Awake()
     {
@@ -22,22 +33,11 @@ public class ComDefensePlayer : MonoBehaviour
 
     public void SetUp(SkillId id)
     {
-        m_SkillAgent = new SkillAgent(this);
+        StageData stageData = ComDefense.Root.GetStageData;
+        m_StateAgent = new StateAgent(stageData);
 
-        switch(id)
-        {
-            case SkillId.MagicMissile:
-                m_SkillAgent.Add(new MagicMissile(), m_SkillPrefabs[(int)id], m_SkillRoot);
-                break;
-
-            case SkillId.Fireball:
-                m_SkillAgent.Add(new Fireball(), m_SkillPrefabs[(int)id], m_SkillRoot);
-                break;
-
-            case SkillId.Icebolt:
-                m_SkillAgent.Add(new Icebolt(), m_SkillPrefabs[(int)id], m_SkillRoot);
-                break;
-        }
+        m_SkillAgent = new SkillAgent(this, m_SkillRoot);
+        m_SkillAgent.Add(id);
     }
 
     private void Update()

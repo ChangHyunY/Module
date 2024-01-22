@@ -1,53 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Anchor.Unity.UGui.Panel;
+using System;
 
 //TODO
-public class ComUIDefenseSkillSelector : MonoBehaviour
+public class ComUIDefenseSkillSelector : ComPanel<ComUIDefenseSkillSelector>
 {
-    private static ComUIDefenseSkillSelector s_Root;
-    public static ComUIDefenseSkillSelector Root => s_Root;
-
-    private Canvas m_Canvas;
-
     public ComUISkillContent[] m_ComUISkillContents;
     public UnityEngine.UI.Button m_ButtonRefresh;
 
     private bool m_CanRefresh = true;
 
-    private void Awake()
+    protected override void OnInit()
     {
-        s_Root = this;
-
-        m_Canvas = GetComponent<Canvas>();
-    }
-
-    private void Start()
-    {
-        m_Canvas.enabled = false;
-    }
-
-    private void Update()
-    {
-        if(UnityEngine.InputSystem.Keyboard.current.qKey.wasPressedThisFrame)
+        m_ButtonRefresh.onClick.AddListener(() =>
         {
-            OnOpen();
-        }
+            m_CanRefresh = false;
+            SetUp();
+        });
     }
 
-    public void OnOpen()
+    protected override void OnOpen()
     {
         Time.timeScale = 0f;
-        m_Canvas.enabled = true;
         m_ButtonRefresh.interactable = m_CanRefresh;
 
         SetUp();
     }
 
-    public void Close()
+    protected override void OnClose()
     {
         Time.timeScale = 1f;
-        m_Canvas.enabled = false;
+    }
+
+    protected override void OnSetData(EventArgs args)
+    {
+    }
+
+    protected override void OnSetBtnText(string[] text)
+    {
     }
 
     public void SetUp()
@@ -59,10 +51,8 @@ public class ComUIDefenseSkillSelector : MonoBehaviour
         }
     }
 
-    public void OnEventRefresh()
+    public void Reset()
     {
-        m_CanRefresh = false;
-
-        SetUp();
+        m_CanRefresh = true;
     }
 }

@@ -16,6 +16,10 @@ public enum PanelId
     Login,
     Start,
     Demo,
+
+    DefenseLobby,
+    DefenseInGame,
+    DefenseSkillSelector,
 }
 
 public enum SoundType
@@ -167,7 +171,9 @@ public partial class Define
 
     private static readonly string[] k_DefenseAssets =
     {
-
+        "Assets/Resource/Defense/UI/Assets/Canvas_DefenseIngame.prefab",
+        "Assets/Resource/Defense/UI/Assets/Canvas_Lobby.prefab",
+        "Assets/Resource/Defense/UI/Assets/Canvas_SkillSelector.prefab",
     };
 
 

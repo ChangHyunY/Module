@@ -30,7 +30,7 @@ public class ComDefenseSpawner : MonoBehaviour
 
     private void Start()
     {
-        m_StageData = ComDefense.Root.soStageData.stageDatas[0];
+        m_StageData = ComDefense.Root.GetStageData;
         m_StageData.SetUp();
 
         int length = m_StageData.monsterId.Length;

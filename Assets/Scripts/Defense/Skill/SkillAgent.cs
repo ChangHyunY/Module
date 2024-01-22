@@ -8,6 +8,7 @@ using ComSkill = Defense.ComSkill;
 public class SkillAgent
 {
     private ComDefensePlayer m_Player = null;
+    private Transform m_Root = null;
 
     // Skill의 정보를 담고있는 데이터 (*최대 5개까지 저장)
     private List<Skill> m_Skill = new List<Skill>();
@@ -17,9 +18,10 @@ public class SkillAgent
 
     private List<SkillBuff> m_Buffs = new List<SkillBuff>();
 
-    public SkillAgent(ComDefensePlayer player)
+    public SkillAgent(ComDefensePlayer player, Transform root)
     {
         m_Player = player;
+        m_Root = root;
 
         foreach(var skillbuff in ComDefense.Root.soSkillBuff)
         {
@@ -58,6 +60,24 @@ public class SkillAgent
         AddBuff(skill.Info);
     }
 
+    public void Add(SkillId id)
+    {
+        switch (id)
+        {
+            case SkillId.MagicMissile:
+                Add(new MagicMissile(), m_Player.m_SkillPrefabs[(int)id], m_Root);
+                break;
+
+            case SkillId.Fireball:
+                Add(new Fireball(), m_Player.m_SkillPrefabs[(int)id], m_Root);
+                break;
+
+            case SkillId.Icebolt:
+                Add(new Icebolt(), m_Player.m_SkillPrefabs[(int)id], m_Root);
+                break;
+        }
+    }
+
     public void AddBuff(SkillInfo info)
     {
         SOSkillBuff skillBuff = ComDefense.Root.soSkillBuff[(int)info.id];
@@ -89,7 +109,7 @@ public class SkillAgent
     //TODO
     public void Edit(SkillBuff buff)
     {
-        Skill skill = m_Skill.Find(x => x.Info.id.Equals(buff.buffId));
+        Skill skill = m_Skill.Find(x => x.Info.id.Equals(buff.id));
 
         if (skill != null)
         {
@@ -131,6 +151,10 @@ public class SkillAgent
             }
 
             RemoveBuff(buff);
+        }
+        else
+        {
+            Add(buff.id);
         }
     }
 

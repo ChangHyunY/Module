@@ -13,11 +13,26 @@ public class ComDefense : MonoBehaviour
     public SOSkillData soSkillData;
     public List<SOSkillBuff> soSkillBuff;
 
+    public int StageIndex { get; set; }
+
+    public StageData GetStageData
+    {
+        get => soStageData.stageDatas[StageIndex];
+    }
+
     private void Awake()
     {
         s_Root = this;
 
         Screen.SetResolution(720, 1280, true);
+    }
+
+    private void Update()
+    {
+        if (UnityEngine.InputSystem.Keyboard.current.qKey.wasPressedThisFrame)
+        {
+            ComUIDefenseSkillSelector.Root.Open();
+        }
     }
 
     public void GameStart()
@@ -29,7 +44,9 @@ public class ComDefense : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
 
-        StartCoroutine(ComDefenseSpawner.Root.Spawn());
         ComDefensePlayer.Root.SetUp(SkillId.MagicMissile);
+        ComUIDefenseInGame.Root.Reset();
+        ComUIDefenseSkillSelector.Root.Reset();
+        StartCoroutine(ComDefenseSpawner.Root.Spawn());
     }
 }

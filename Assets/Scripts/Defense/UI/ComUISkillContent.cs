@@ -23,6 +23,7 @@ public class ComUISkillContent : MonoBehaviour
     public void OnEventSkillSelect()
     {
         ComDefensePlayer.Root?.SkillAgent.Edit(m_Buff);
+        ComUIDefenseInGame.Root.SetExp = 0f;
         ComUIDefenseSkillSelector.Root.Close();
     }
 }

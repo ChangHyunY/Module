@@ -77,6 +77,7 @@ public abstract class ComMonster : MonoBehaviour
 
     protected virtual void Die()
     {
+        ComDefensePlayer.Root.StateAgent.AddExp(1);
         ComDefenseSpawner.Root.Return(this);
     }
 
