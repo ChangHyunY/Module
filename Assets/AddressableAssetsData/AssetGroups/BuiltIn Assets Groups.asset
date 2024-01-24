@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Demo Assets Groups
+  m_Name: BuiltIn Assets Groups
   m_EditorClassIdentifier: 
-  m_GroupName: Demo Assets Groups
+  m_GroupName: BuiltIn Assets Groups
   m_Data:
     m_SerializedData: []
-  m_GUID: 30c6a9353da73474a9548f5df73f5fbb
+  m_GUID: 9a4cafad2c1dcda419d3b09380c3b10f
   m_SerializeEntries:
-  - m_GUID: e171fe8f9062cc043ab8f7f26e39294b
-    m_Address: Assets/Resource/Demo/References
+  - m_GUID: 55d1e104a9e0e294d9aabf75c5cfa2d6
+    m_Address: Assets/Resource/BuiltIn/References
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 8a17c3510c95c5e41942d85103c895e8
-    m_Address: Assets/Resource/Demo/Assets
+  - m_GUID: 632d350b4cebd4b40a64383d57924203
+    m_Address: Assets/Resource/BuiltIn/Assets
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2b024d508fc20a84a90321b4437a32a1, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 7428c7bf9a988794f8b2f018e1c9a1ca, type: 2}
-    - {fileID: 11400000, guid: 1cdfdb81d511eeb4a8c72ba46e8afa85, type: 2}
+    - {fileID: 11400000, guid: dd4bff8755c32dc428c0cd1a6f93c0fa, type: 2}
+    - {fileID: 11400000, guid: b6206619a0f84214d9bea7e68de7af5a, type: 2}

@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4464878113875885548, guid: 404d755456b61cb4b8496b2a5607804b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464878113875885548, guid: 404d755456b61cb4b8496b2a5607804b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4464878114292328526, guid: 404d755456b61cb4b8496b2a5607804b, type: 3}
       propertyPath: m_Name
       value: Canvas_Start
@@ -229,6 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1849615083}
+  - component: {fileID: 1849615084}
   m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
@@ -251,6 +260,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1849615084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849615082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b06257273ebc804d9750ba8249ac130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2051147147
 GameObject:
   m_ObjectHideFlags: 0

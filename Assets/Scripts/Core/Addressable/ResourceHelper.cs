@@ -8,8 +8,8 @@ namespace Anchor.Unity
     public enum SceneId
     {
         Main,
-        Login,
         Start,
+        Login,
         Demo,
         Field_01,
         Defense,
@@ -24,8 +24,8 @@ namespace Anchor.Unity
         public static readonly string[] k_SceneNames =
         {
             "Assets/Scenes/Main.unity",
-            "Assets/Scenes/Login.unity",
             "Assets/Scenes/Start.unity",
+            "Assets/Scenes/Login.unity",
             "Assets/Scenes/Demo.unity",
             "Assets/Resource/Field/Scene/rpgpp_lt_scene_1.0.unity",
             "Assets/Scenes/Defense.unity",
@@ -65,13 +65,36 @@ namespace Anchor.Unity
 
             switch (scene)
             {
+                case SceneId.Main:
+                case SceneId.Start:
+                case SceneId.Login:
+                case SceneId.Defense:
+                    LoadDefaultScene(keys, scene, callback);
+                    break;
+
                 case SceneId.Demo:
                     LoadDemoScene(keys, scene, callback);
                     break;
+            }
+        }
 
-                default:
-                    LoadDefaultScene(keys, scene, callback);
-                    break;
+        public static void LoadAndGetBuiltInAsset(System.Action<bool> callback = null)
+        {
+            ComMain.Root.StartCoroutine(CoLoadAndGetBuiltInAsset(callback));
+        }
+
+        private static IEnumerator CoLoadAndGetBuiltInAsset(System.Action<bool> callback = null)
+        {
+            foreach(var key in Define.DefaultAssets)
+            {
+                yield return s_GameObjectBags[(int)GameObjectBagId.Normal].CoLoad(key, ManageType.Default);
+            }
+
+            foreach(var key in Define.BuiltInAssets)
+            {
+                yield return s_GameObjectBags[(int)GameObjectBagId.Normal].CoLoad(key, ManageType.Default);
+
+                var item = s_GameObjectBags[(int)GameObjectBagId.Normal].Get<RectTransform>(key);
             }
         }
 

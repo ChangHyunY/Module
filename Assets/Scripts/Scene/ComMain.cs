@@ -23,7 +23,7 @@ namespace Anchor
 
         private void Start()
         {
-            ResourceHelper.LoadScene(SceneId.Login, Define.LoginAssets);
+            ResourceHelper.LoadScene(SceneId.Start, Define.LoginAssets);
         }
 
         private void Update()

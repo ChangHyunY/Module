@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2703669916806899860}
   - component: {fileID: -1328591494819506317}
   m_Layer: 5
-  m_Name: TMP_Damage
+  m_Name: DamageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 754458b33c33ea5438abc504334582ed, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

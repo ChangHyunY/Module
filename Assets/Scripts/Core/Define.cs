@@ -4,6 +4,12 @@ enum GameObjectBagId
     Normal,
 }
 
+public enum DefaultAssetId
+{
+    CommonDialog,
+    DamageText,
+}
+
 public enum DialogId
 {
     CommonDialog,
@@ -13,6 +19,7 @@ public enum DialogId
 
 public enum PanelId
 {
+    Main,
     Login,
     Start,
     Demo,
@@ -150,6 +157,17 @@ public partial class Define
         "Assets/Resource/Sound/Assets/eft_ui_click_blop.mp3",
     };
 
+    private static readonly string[] k_BuiltInAssets=
+    {
+        "Assets/Resource/BuiltIn/Assets/Canvas_Main.prefab",
+    };
+
+    private static readonly string[] k_DefaultAssets =
+    {
+        "Assets/Resource/Default/Assets/CommonDialog.prefab",
+        "Assets/Resource/Default/Assets/DamageText.prefab",
+    };
+
     private static readonly string[] k_LoginAssets =
     {
         "Assets/Resource/Login/Assets/Canvas_Login.prefab",
@@ -163,10 +181,8 @@ public partial class Define
     private static readonly string[] k_DemoAssets =
     {
         "Assets/Resource/Demo/Assets/Canvas_Demo.prefab",
-        "Assets/Resource/Demo/Assets/CommonDialog.prefab",
         "Assets/Resource/Demo/Assets/Cube.prefab",
         "Assets/Resource/Demo/Assets/HUD_HpBar.prefab",
-        "Assets/Resource/Demo/Assets/TMP_Damage.prefab",
     };
 
     private static readonly string[] k_DefenseAssets =
@@ -178,6 +194,8 @@ public partial class Define
 
 
     public static string[] SoundAssets => k_SoundAssets;
+    public static string[] BuiltInAssets => k_BuiltInAssets;
+    public static string[] DefaultAssets => k_DefaultAssets;
     public static string[] LoginAssets => k_LoginAssets;
     public static string[] StartAssets => k_StartAssets;
     public static string[] DemoAssets => k_DemoAssets;

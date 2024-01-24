@@ -50,7 +50,7 @@ public class ComUIDefenseInGame : ComPanel<ComUIDefenseInGame>
     public void Reset()
     {
         scrollExp.size = 0;
-        progress.text = $"0/0";
+        progress.text = $"0/20";
         timer.text = "00:00";
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Anchor.Unity;
 
 public enum MonsterId
 {
@@ -65,6 +66,8 @@ public abstract class ComMonster : MonoBehaviour
         {
             return;
         }
+
+        Witch.DialogCaller.OnDamageText(DialogId.DamageText, $"{damage}", (int)DamageId.Default, transform.position);
 
         StartCoroutine(SRColorChange());
 
