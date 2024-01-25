@@ -183,16 +183,19 @@ public class SkillAgent
         {
             if (skill.Casting())
             {
-                ComMonster comMonster = FindMonsters(skill.SkillRange);
-
-                if (comMonster != null)
+                for(int i = 0; i < skill.Info.castCount; ++i)
                 {
-                    int idx = GetIndex(skill);
-                    ComSkill comSkill = m_ComSkill[idx].Get();
-                    comSkill.transform.position = m_Player.transform.position;
-                    comSkill.gameObject.SetActive(true);
-                    comSkill.SetUp(comMonster);
-                }
+                    ComMonster comMonster = FindMonsters(skill.SkillRange);
+
+                    if (comMonster != null)
+                    {
+                        int idx = GetIndex(skill);
+                        ComSkill comSkill = m_ComSkill[idx].Get();
+                        comSkill.transform.position = m_Player.transform.position;
+                        comSkill.gameObject.SetActive(true);
+                        comSkill.SetUp(comMonster);
+                    }
+                }                
             }
         });
     }

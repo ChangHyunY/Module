@@ -6,6 +6,7 @@ namespace Defense
 {
     public class ComIcebolt : ComSkill
     {
+        [SerializeField] SpriteRenderer sr;
         private int penetrate;
 
         public override void SetUp(ComMonster target)
@@ -13,6 +14,8 @@ namespace Defense
             base.SetUp(target);
 
             penetrate = m_Skill.Info.penetrate;
+
+            LookTarget(sr.transform, Vector3.forward, 90f);
         }
 
         protected override void Move()

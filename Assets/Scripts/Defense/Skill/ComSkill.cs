@@ -8,8 +8,8 @@ namespace Defense
     {
         public Skill m_Skill = null;
 
-        public ComMonster m_Target;
-        public Vector3 m_Direaction = Vector3.zero;
+        protected ComMonster m_Target;
+        protected Vector3 m_Direaction = Vector3.zero;
 
         public virtual void SetUp(ComMonster target)
         {
@@ -30,9 +30,19 @@ namespace Defense
                     Hit(collision.GetComponent<ComMonster>());
                     break;
 
+                case "Finish":
+                    Return();
+                    break;
+
                 default:
                     break;
             }
+        }
+
+        protected void LookTarget(Transform transform, Vector3 dir, float angle)
+        {
+            transform.rotation = Quaternion.LookRotation(dir, m_Direaction);
+            transform.rotation *= Quaternion.AngleAxis(angle, dir);
         }
 
         protected abstract void Move();
