@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6524674368169530221}
   - component: {fileID: 6524674368169530222}
   - component: {fileID: 453318164953597149}
-  - component: {fileID: -8079406123488957499}
+  - component: {fileID: 5210770016513436359}
   m_Layer: 0
   m_Name: Monster_Hedgehog
   m_TagString: Monster
@@ -102,7 +102,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-8079406123488957499
+--- !u!114 &5210770016513436359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,10 +111,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6524674368169530220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbfe5acdf897f494481f10bf1ffd5d8c, type: 3}
+  m_Script: {fileID: 11500000, guid: eaee44c6ddf1ac04496db8b1a4f8fd3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Index: 0
+  m_MonsterId: 0
   m_LimitDistanceToTarget: 0.5
-  m_MoveSpeed: 0.5
   m_MoveDirection: {x: 0, y: -1, z: 0}
   m_Target: {fileID: 0}

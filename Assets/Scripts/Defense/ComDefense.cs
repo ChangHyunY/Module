@@ -5,7 +5,6 @@ using UnityEngine;
 public class ComDefense : MonoBehaviour
 {
     private static ComDefense s_Root;
-
     public static ComDefense Root => s_Root;
 
     public SOMonsterData soMonsterData;
@@ -13,7 +12,10 @@ public class ComDefense : MonoBehaviour
     public SOSkillData soSkillData;
     public List<SOSkillBuff> soSkillBuff;
 
+    private const float k_StartDelay = 2.0f;
+
     public int StageIndex { get; set; }
+    public bool IsPlaying { get; set; }
 
     public StageData GetStageData
     {
@@ -27,14 +29,6 @@ public class ComDefense : MonoBehaviour
         Screen.SetResolution(720, 1280, true);
     }
 
-    private void Update()
-    {
-        if (UnityEngine.InputSystem.Keyboard.current.qKey.wasPressedThisFrame)
-        {
-            ComUIDefenseSkillSelector.Root.Open();
-        }
-    }
-
     public void GameStart()
     {
         StartCoroutine(IGameStart());
@@ -42,11 +36,21 @@ public class ComDefense : MonoBehaviour
 
     private IEnumerator IGameStart()
     {
-        yield return new WaitForSeconds(1.0f);
+        IsPlaying = true;
+
+        yield return new WaitForSeconds(k_StartDelay);
 
         ComDefensePlayer.Root.SetUp(SkillId.MagicMissile);
-        ComUIDefenseInGame.Root.Reset();
         ComUIDefenseSkillSelector.Root.Reset();
         StartCoroutine(ComDefenseSpawner.Root.Spawn());
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("GameOver");
+
+        IsPlaying = false;
+        ComUIDefenseInGame.Root.Close();
+        ComUIDefenseLobby.Root.Open();
     }
 }

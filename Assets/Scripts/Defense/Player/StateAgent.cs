@@ -58,7 +58,7 @@ public class StateAgent
         currentExp += exp;
         ComUIDefenseInGame.Root.SetExp = (float)currentExp / expPerRound[currentRound];
 
-        if(currentExp >= expPerRound[currentRound])
+        if(currentExp >= expPerRound[currentRound] && ComDefense.Root.IsPlaying)
         {
             currentExp = 0;
             ++currentRound;

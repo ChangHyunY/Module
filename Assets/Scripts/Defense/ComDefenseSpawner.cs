@@ -13,13 +13,16 @@ public class ComDefenseSpawner : MonoBehaviour
     public Transform m_SpawnRoot;
     public Transform m_SpawnPivot;
     public Transform[] m_SpawnXRange;
+    public Transform m_WallPivot;
 
+    [Space]
+    [SerializeField] int m_MaxRound = 20;
+    private int m_AllActiveCount = 0;
     private int m_RoundIndex = 0;
     private float m_RespawnDelay = 5.0f;
 
     private const float m_InitalGenerateCount = 16;
 
-    public Transform m_TargetPivot;
 
     private Dictionary<int, FixedPool<ComMonster>> m_Monsters;
 
@@ -56,13 +59,13 @@ public class ComDefenseSpawner : MonoBehaviour
 
     public IEnumerator Spawn()
     {
+        m_AllActiveCount = m_StageData.GetAllMonstersCount(m_MaxRound);
         m_RoundIndex = 0;
-        for (int i = 0; i < 20; ++i)
+        for (int i = 0; i < m_MaxRound; ++i)
         {
             int idx = 0;
             float delay = m_StageData.GetDelay(m_RoundIndex);
             int[] counts = new int[m_StageData.monsters.Count];
-            Debug.Log($"{m_RoundIndex + 1} Round Start | Delay : {delay}");
 
             while (true)
             {
@@ -89,7 +92,7 @@ public class ComDefenseSpawner : MonoBehaviour
                 position.x += Random.Range(m_SpawnXRange[0].position.x, m_SpawnXRange[1].position.x);
                 monster.transform.position = position;
                 monster.gameObject.SetActive(true);
-                monster.SetUp(idx, m_TargetPivot, ComDefense.Root.soMonsterData.monsterDatas[(int)monster.m_MonsterId]);
+                monster.SetUp(idx, m_WallPivot, ComDefense.Root.soMonsterData.monsterDatas[(int)monster.m_MonsterId]);
 
                 ++counts[idx];
 
@@ -98,12 +101,22 @@ public class ComDefenseSpawner : MonoBehaviour
 
             ++m_RoundIndex;
             yield return new WaitForSeconds(m_RespawnDelay);
-        }        
+        }
+    }
+
+    public void CheckMonstersCount()
+    {
+        if(--m_AllActiveCount <= 0)
+        {
+            ComDefense.Root.GameOver();
+        }
     }
 
     public void Return(ComMonster comMonster)
     {
         comMonster.gameObject.SetActive(false);
         m_Monsters[comMonster.m_Index].Return(comMonster);
+
+        CheckMonstersCount();
     }
 }

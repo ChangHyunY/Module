@@ -20,11 +20,7 @@ namespace Defense
         {
             foreach(Collider2D collider in Physics2D.OverlapCircleAll(transform.position, m_Skill.ExplosionRange))
             {
-                if(collider.CompareTag("Monster"))
-                {
-                    ComMonster monster = collider.GetComponent<ComMonster>();
-                    monster.Hit(m_Skill.Info.explosionDamage);
-                }
+                collider.GetComponent<IAttackable>().Hit(m_OffenseParameter, m_Skill.Info.explosionDamage);
             }
 
             Return();

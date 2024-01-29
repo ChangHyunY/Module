@@ -48,4 +48,19 @@ public class StageData
 
         return 1.0f / count;
     }
+
+    public int GetAllMonstersCount(int length)
+    {
+        int result = 0;
+
+        foreach(int[] monster in monsters.Values)
+        {
+            for(int i = 0; i < length; ++i)
+            {
+                result += monster[i];
+            }
+        }
+
+        return result;
+    }
 }

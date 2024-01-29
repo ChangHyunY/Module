@@ -23,6 +23,8 @@ namespace Anchor.Unity.UGui
 
     public abstract class ComUGui : MonoBehaviour
     {
+        protected Canvas m_Canvas;
+
         [SerializeField] protected UGuiId m_UGuiType = UGuiId.Panel;
         [SerializeField] protected Sibling m_SiblingOnOpen = Sibling.None;
         [SerializeField] protected ManageType m_ManageType = ManageType.Defalut;
@@ -30,6 +32,12 @@ namespace Anchor.Unity.UGui
 
         protected bool m_Opened;
         protected bool m_OpenCalled;
+
+        public Canvas Canvas
+        {
+            get => m_Canvas;
+            set => m_Canvas = value;
+        }
 
         public UGuiId UGuiType => m_UGuiType;
         public ManageType ManageType => m_ManageType;

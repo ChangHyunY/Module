@@ -20,6 +20,8 @@ public class ComUIDefenseInGame : ComPanel<ComUIDefenseInGame>
     public Image[] skillIcons;
     public TextMeshProUGUI[] skillLevels;
 
+    private int level;
+
     public float SetExp
     {
         set => scrollExp.size = value;
@@ -28,10 +30,21 @@ public class ComUIDefenseInGame : ComPanel<ComUIDefenseInGame>
     protected override void OnInit()
     {
         skillBar.SetActive(false);
+
+        level = 1;
+        scrollExp.size = 0;
+        progress.text = $"{level}/20";
+        timer.text = "00:00";
     }
 
     protected override void OnClose()
     {
+        skillBar.SetActive(false);
+
+        level = 1;
+        scrollExp.size = 0;
+        progress.text = $"{level}/20";
+        timer.text = "00:00";
     }
 
     protected override void OnOpen()
@@ -47,10 +60,10 @@ public class ComUIDefenseInGame : ComPanel<ComUIDefenseInGame>
     {
     }
 
-    public void Reset()
+    public void SetUp(float scrollSize)
     {
-        scrollExp.size = 0;
-        progress.text = $"0/20";
-        timer.text = "00:00";
+        ++level;
+        scrollExp.size = scrollSize;
+        progress.text = $"{level}/20";
     }
 }

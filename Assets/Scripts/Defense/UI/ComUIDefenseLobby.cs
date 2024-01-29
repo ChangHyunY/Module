@@ -10,12 +10,9 @@ public class ComUIDefenseLobby : ComPanel<ComUIDefenseLobby>
 {
     public enum AnimationId
     {
-        OnClose,
+        IsPlaying,
     }
 
-    [Space]
-    public Animator[] m_Animators;
-    public GameObject[] m_ControlledObjects;
     [Space]
     public GameObject m_StageCell;
     public Transform m_CellRoot;
@@ -23,26 +20,17 @@ public class ComUIDefenseLobby : ComPanel<ComUIDefenseLobby>
 
     const int k_MaxCellLength = 5;
 
+    private Animator m_Animators;
     private UIStageCell[] m_Cells;
 
     public void OnEventGameStart()
     {
-        foreach(Animator animator in m_Animators)
-        {
-            animator.SetBool(AnimationId.OnClose.ToString(), true);
-        }
-
-        foreach(GameObject obj in m_ControlledObjects)
-        {
-            obj.SetActive(false);
-        }
-
-        ComUIDefenseInGame.Root.Open();
-        ComDefense.Root.GameStart();
+        m_Animators.SetBool(AnimationId.IsPlaying.ToString(), true);
     }
 
     protected override void OnInit()
     {
+        m_Animators = GetComponent<Animator>();
         m_Cells = new UIStageCell[k_MaxCellLength];
         for (int i = 0; i < k_MaxCellLength; ++i)
         {
@@ -60,10 +48,21 @@ public class ComUIDefenseLobby : ComPanel<ComUIDefenseLobby>
 
     protected override void OnClose()
     {
+        ComUIDefenseInGame.Root.Open();
+        ComDefense.Root.GameStart();
+    }
+
+    /// <summary>
+    /// Animator Event
+    /// </summary>
+    private void OnCloseEvent()
+    {        
+        Close();
     }
 
     protected override void OnOpen()
     {
+        m_Animators.SetBool(AnimationId.IsPlaying.ToString(), false);
     }    
 
     protected override void OnSetData(System.EventArgs args)

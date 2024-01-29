@@ -49,7 +49,7 @@ namespace Anchor.Unity
                 }
                 else
                 {
-                    uGui.gameObject.SetActive(uGui.AwakeOnOpen);
+                    uGui.Canvas.enabled = uGui.AwakeOnOpen;
 
                     m_Values[id].Add(new UGuiInfo(uGui));
                 }

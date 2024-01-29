@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Anchor.Unity;
 
 public enum MonsterId
 {
@@ -11,7 +10,7 @@ public enum MonsterId
     MiniSlime,
 }
 
-public abstract class ComMonster : MonoBehaviour
+public class ComMonster : MonoBehaviour, IAttackable
 {
     public int m_Index;
     public MonsterId m_MonsterId;
@@ -23,20 +22,22 @@ public abstract class ComMonster : MonoBehaviour
     private MonsterData m_MonsterData;
 
     private float m_CurrentHp;
+    private float m_MoveSpeed;
 
     private void Awake()
     {
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public virtual void SetUp(int index, Transform target, MonsterData monsterData)
+    public void SetUp(int index, Transform target, MonsterData monsterData)
     {
         m_Index = index;
         m_Target = target;
         m_MonsterData = monsterData;
         m_SpriteRenderer.color = Color.white;
-
         m_CurrentHp = monsterData.hp;
+
+        CalculateSpeed();
     }
 
     private void FixedUpdate()
@@ -44,7 +45,13 @@ public abstract class ComMonster : MonoBehaviour
         Move();
     }
 
-    protected virtual void Move()
+    private void CalculateSpeed()
+    {
+        float distance = m_Target.position.y - transform.position.y;
+        m_MoveSpeed = Mathf.Abs(distance) / m_MonsterData.timeToArrive;
+    }
+
+    private void Move()
     {
         if(m_Target == null)
         {
@@ -55,7 +62,7 @@ public abstract class ComMonster : MonoBehaviour
 
         if (distance > m_LimitDistanceToTarget)
         {
-            transform.position += m_MoveDirection * m_MonsterData.speed * Time.fixedDeltaTime;
+            transform.position += m_MoveDirection * m_MoveSpeed * Time.fixedDeltaTime;
         }
     }
 
@@ -69,8 +76,6 @@ public abstract class ComMonster : MonoBehaviour
 
         Witch.DialogCaller.OnDamageText(DialogId.DamageText, $"{damage}", (int)DamageId.Default, transform.position);
 
-        StartCoroutine(SRColorChange());
-
         m_CurrentHp -= damage - m_MonsterData.def;
         if(m_CurrentHp <= 0)
         {
@@ -78,23 +83,30 @@ public abstract class ComMonster : MonoBehaviour
         }
     }
 
-    protected virtual void Die()
+    private void Die()
     {
-        ComDefensePlayer.Root.StateAgent.AddExp(1);
         ComDefenseSpawner.Root.Return(this);
+        ComDefensePlayer.Root.StateAgent.AddExp(1);
     }
 
-    private IEnumerator SRColorChange()
+    public void Hit<T>(OffenseParameter<T> offenseParameter, float damage)
     {
-        while(true)
+        if(offenseParameter.offenseType == OffenseType.Skill)
         {
-            m_SpriteRenderer.color = Color.red;
+            if(m_MonsterData.luk > Random.Range(0, 100))
+            {
+                return;
+            }
 
-            yield return new WaitForSeconds(0.2f);
+            Witch.DialogCaller.OnDamageText(DialogId.DamageText, $"{damage}", (int)DamageId.Default, transform.position);
 
-            m_SpriteRenderer.color = Color.white;
+            m_CurrentHp -= damage - m_MonsterData.def;
+            if(m_CurrentHp <= 0)
+            {
+                Die();
+            }
 
-            break;
+            offenseParameter.hitCallback?.Invoke();
         }
     }
 }

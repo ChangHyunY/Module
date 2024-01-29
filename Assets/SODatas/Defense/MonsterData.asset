@@ -23,7 +23,7 @@ MonoBehaviour:
     atk: 1
     def: 0
     luk: 0
-    speed: 1
+    timeToArrive: 30
     exp: 1
     fire: 0
     ice: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
     atk: 1
     def: 0
     luk: 0
-    speed: 1
+    timeToArrive: 45
     exp: 1
     fire: 50
     ice: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
     atk: 1
     def: 0
     luk: 0
-    speed: 1
+    timeToArrive: 30
     exp: 1
     fire: 0
     ice: 50
@@ -76,7 +76,7 @@ MonoBehaviour:
     atk: 1
     def: 0
     luk: 0
-    speed: 1
+    timeToArrive: 30
     exp: 0
     fire: 50
     ice: 0

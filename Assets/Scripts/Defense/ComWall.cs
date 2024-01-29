@@ -1,15 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComWall : MonoBehaviour
+public class ComWall : MonoBehaviour, IAttackable
 {
-    private static ComWall m_Root;
-
-    public static ComWall Root => m_Root;
-
-    private void Awake()
+    public void Hit<T>(OffenseParameter<T> offenseParameter, float damage)
     {
-        m_Root = this;
+        offenseParameter.returnCallback?.Invoke();
     }
 }

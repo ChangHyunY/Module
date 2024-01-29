@@ -17,10 +17,9 @@ namespace Anchor.Unity.UGui.Panel
 
         protected override void Awake()
         {
+            m_Canvas = GetComponent<Canvas>();
             DialogManager.Add(UGuiId.Panel, this);
-
             s_Root = this as T;
-
             OnInit();
         }
 
@@ -40,7 +39,7 @@ namespace Anchor.Unity.UGui.Panel
 
             m_Opened = true;
 
-            gameObject.SetActive(true);
+            m_Canvas.enabled = true;
 
             if (m_SiblingOnOpen == Sibling.First)
             {
@@ -66,7 +65,7 @@ namespace Anchor.Unity.UGui.Panel
 
             m_Opened = false;
 
-            gameObject.SetActive(false);
+            m_Canvas.enabled = false;
         }
     }
 }
